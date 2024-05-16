@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:real_it_solution_assignment/models/Product.dart';
 import 'package:real_it_solution_assignment/providers/wishlist_provider.dart';
-import 'package:real_it_solution_assignment/widgets/cart_item.dart';
 import 'package:real_it_solution_assignment/widgets/wishlist_item.dart';
 
 class WishlistScreen extends StatelessWidget {
+  const WishlistScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final wishlistProvider = Provider.of<WishlistProvider>(context);
@@ -19,7 +19,7 @@ class WishlistScreen extends StatelessWidget {
         ),
       ),
       backgroundColor: Colors.grey.shade200,
-      body: (wishlistProvider.wishlist.length == 0)
+      body: (wishlistProvider.wishlist.isEmpty)
           ? Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

@@ -26,7 +26,7 @@ class _CartPageState extends State<CartPage> {
         ),
       ),
       backgroundColor: Colors.grey.shade200,
-      body: (cartProvider.cartProducts.length == 0)
+      body: (cartProvider.cartProducts.isEmpty)
           ? Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

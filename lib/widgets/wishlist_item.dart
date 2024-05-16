@@ -5,8 +5,6 @@ import 'package:real_it_solution_assignment/extension/extension.dart';
 import 'package:real_it_solution_assignment/models/Product.dart';
 import 'package:real_it_solution_assignment/providers/cart_provider.dart';
 import 'package:real_it_solution_assignment/providers/wishlist_provider.dart';
-import 'package:real_it_solution_assignment/providers/wishlist_provider.dart';
-import 'package:real_it_solution_assignment/providers/wishlist_provider.dart';
 
 class WishListItem extends StatelessWidget {
   Product product;
@@ -66,7 +64,7 @@ class WishListItem extends StatelessWidget {
               Text(
                 "\$ ${product.price}",
                 maxLines: 1,
-                style: TextStyle(
+                style: const TextStyle(
                     overflow: TextOverflow.ellipsis,
                     fontSize: 22,
                     fontWeight: FontWeight.bold,

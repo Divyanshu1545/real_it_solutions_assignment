@@ -36,30 +36,6 @@ class _HomeScreenState extends State<HomeScreen> {
     List<Product> products = Provider.of<ProductProvider>(context).products;
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.orange,
-              ),
-              child: Text(
-                'Drawer Header',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
-              ),
-            ),
-            ListTile(
-              leading: const Icon(Icons.logout),
-              title: const Text('Logout'),
-              onTap: () {},
-            ),
-          ],
-        ),
-      ),
       appBar: AppBar(
         forceMaterialTransparency: true,
         backgroundColor: Colors.grey.shade200,
@@ -75,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => WishlistScreen(),
+                  builder: (context) => const WishlistScreen(),
                 ),
               );
             },

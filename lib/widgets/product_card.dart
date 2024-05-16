@@ -35,7 +35,7 @@ class ProductCard extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(12, 10, 12, 5),
                   child: CachedNetworkImage(
-                    placeholder: (context, url) => SizedBox(
+                    placeholder: (context, url) => const SizedBox(
                       width: 50,
                       height: 50,
                       child: CircularProgressIndicator(
@@ -60,14 +60,14 @@ class ProductCard extends StatelessWidget {
                     children: [
                       Text(
                         product.title,
-                        style: TextStyle(
+                        style: const TextStyle(
                           overflow: TextOverflow.ellipsis,
                         ),
                         maxLines: 1,
                       ),
                       Text(
                         '\$ ${product.price}',
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 5),
@@ -82,7 +82,7 @@ class ProductCard extends StatelessWidget {
                               children: [
                                 Text(
                                   product.rating.rate.toString(),
-                                  style: TextStyle(fontSize: 14),
+                                  style: const TextStyle(fontSize: 14),
                                 ),
                                 const SizedBox(width: 4),
                                 const Icon(Icons.star,

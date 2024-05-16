@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:real_it_solution_assignment/models/Product.dart';
 
 class WishlistProvider extends ChangeNotifier {
-  List<Product> _wishlist = [];
+  final List<Product> _wishlist = [];
 
   List<Product> get wishlist => _wishlist;
 
