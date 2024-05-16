@@ -35,14 +35,6 @@ class ProductCard extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(12, 10, 12, 5),
                   child: CachedNetworkImage(
-                    placeholder: (context, url) => const SizedBox(
-                      width: 50,
-                      height: 50,
-                      child: CircularProgressIndicator(
-                        color: Colors.orange,
-                        strokeWidth: 2,
-                      ),
-                    ),
                     fit: BoxFit.scaleDown,
                     height: 130,
                     imageUrl: product.image,
