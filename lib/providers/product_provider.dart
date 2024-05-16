@@ -23,11 +23,11 @@ class ProductProvider extends ChangeNotifier {
         final List<dynamic> data = jsonDecode(response.body);
         _products = data.map((item) => Product.fromJson(item)).toList();
       } else {
-        _products = []; // Set products to an empty list on error
+        _products = []; 
       }
     } catch (e) {
-      _products = []; // Handle exceptions by setting products to an empty list
+      _products = []; 
     }
-    notifyListeners(); // Notify listeners after updating products
+    notifyListeners(); 
   }
 }

@@ -6,6 +6,7 @@ import 'package:real_it_solution_assignment/providers/product_provider.dart';
 
 import 'package:real_it_solution_assignment/models/Product.dart';
 import 'package:real_it_solution_assignment/screens/cart_screen.dart';
+import 'package:real_it_solution_assignment/screens/wishlist_screen.dart';
 import 'package:real_it_solution_assignment/widgets/product_card.dart';
 import 'package:real_it_solution_assignment/widgets/product_tile.dart';
 
@@ -17,15 +18,15 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late ProductProvider _productProvider;
+  
   final TextEditingController _searchController = TextEditingController();
   late int index;
 
   @override
   void initState() {
     super.initState();
-    _productProvider = Provider.of<ProductProvider>(context, listen: false);
-    _productProvider.fetchProducts();
+    
+
     Random random = Random();
     index = random.nextInt(15) + 1;
   }
@@ -70,7 +71,14 @@ class _HomeScreenState extends State<HomeScreen> {
               color: Colors.deepOrangeAccent,
               size: 35,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => WishlistScreen(),
+                ),
+              );
+            },
           ),
           IconButton(
             icon: const Icon(
@@ -147,11 +155,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               size: 35,
                               color: Colors.deepOrange,
                             ),
-                            // child: SvgPicture.asset('assets/filter.svg',
-                            //     semanticsLabel: 'Filter logo',
-                            //     width: 10,
-                            //     alignment: Alignment.bottomCenter,
-                            //     color: Colors.grey.shade600),
+                          
                           ),
                         ),
                       ],
@@ -204,7 +208,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       style:
                           TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     ProductTile(product: products[index])
@@ -215,18 +219,7 @@ class _HomeScreenState extends State<HomeScreen> {
           },
         ),
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   backgroundColor: Colors.deepOrange,
-      //   tooltip: "View Cart",
-      //   isExtended: true,
-      //   onPressed: () => Navigator.push(
-      //     context,
-      //     MaterialPageRoute(
-      //       builder: (context) => const CartPage(),
-      //     ),
-      //   ),
-      //   child: const Icon(Icons.shopping_cart_checkout_rounded),
-      // ),
+    
     );
   }
 
